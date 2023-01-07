@@ -1,0 +1,6 @@
+version: box/v1
+name: alpine
+tags:
+  - official
+image:
+  repository: alpine
