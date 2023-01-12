@@ -1,4 +1,4 @@
-version: box/v1
+kind: box/v1
 name: parrot
 tags:
   - official
