@@ -38,9 +38,6 @@ jobs:
             name: box-alpine
 
     steps:
-      - name: Output Test
-        run: echo "${{ matrix.images.path }}/${{ matrix.images.name }}"
-
       - name: Checkout repository
         uses: actions/checkout@v3
 
