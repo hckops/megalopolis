@@ -1,0 +1,82 @@
+name: docker-ci
+
+on:
+  # enable manual trigger
+  workflow_dispatch:
+  schedule:
+    # every 24 hours at midnight
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/docker-*.yml'
+      - 'docker/**'
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+env:
+  DOCKER_REPOSITORY: hckops
+
+jobs:
+  docker:
+    name: Docker
+    runs-on: ubuntu-latest
+    # makes sure it doesn't finish the minutes quota if stalls
+    timeout-minutes: 30
+
+    # alternative to loop: parallel builds
+    strategy:
+      matrix:
+        images:
+          - path: boxes
+            name: box-alpine
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+       # extracts tag from ref, returns semver tag or latest
+      - name: Get Docker tag
+        id: get-docker-tag
+        env:
+          GITHUB_REF: ${{ github.ref }}
+          COMMIT_SHA: ${{ github.sha }}
+        run: |
+          if [[ ${{ github.ref_type }} == "tag" ]]; then
+            echo "tag=${GITHUB_REF#refs/tags/v}" >> ${GITHUB_OUTPUT}
+          else
+            echo "tag=latest" >> ${GITHUB_OUTPUT}
+          fi
+      
+      - name: Output Docker tag
+        run: echo ${{ steps.get-docker-tag.outputs.tag }}
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push [${{ env.DOCKER_IMAGE_NAME }}]
+        uses: docker/build-push-action@v3
+        env:
+          DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
+        with:
+          context: ./docker/${{ matrix.images.path }}/${{ env.DOCKER_IMAGE_NAME }}
+          # if false it will only build
+          push: true
+          tags: |
+            ${{ env.DOCKER_REPOSITORY }}/${{ env.DOCKER_IMAGE_NAME }}:latest
+            ${{ env.DOCKER_REPOSITORY }}/${{ env.DOCKER_IMAGE_NAME }}:${{ steps.get-docker-tag.outputs.tag }}
+
+      - name: Notification
+        uses: hckops/actions/discord-action@v0.9.5
+        with:
+          action: create-message
+          webhook-url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          # markdown format
+          message: "> Repository:  **${{ github.repository }}**\\n> Docker:\\t\\t [${{ matrix.images.name }}](https://hub.docker.com/r/${{ env.DOCKER_REPOSITORY }}/${{ matrix.images.name }})\\n> Status:\\t\\t  **NEW image**"
