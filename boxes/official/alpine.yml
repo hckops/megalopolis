@@ -3,4 +3,4 @@ name: alpine
 tags:
   - official
 image:
-  repository: alpine
+  repository: hckops/box-alpine
