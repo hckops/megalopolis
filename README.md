@@ -4,11 +4,6 @@
 
 * [just](https://github.com/casey/just)
 
-GitHub actions repository secrets
-* `DISCORD_WEBHOOK_URL`
-* `DOCKERHUB_USERNAME`
-* `DOCKERHUB_TOKEN`
-
 ```bash
 # prints recipes
 just
