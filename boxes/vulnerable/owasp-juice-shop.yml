@@ -1,0 +1,9 @@
+kind: box/v1
+name: owasp-juice-shop
+tags:
+  - vulnerable
+image:
+  repository: bkimminich/juice-shop
+network:
+  ports:
+    - web:3000:3000

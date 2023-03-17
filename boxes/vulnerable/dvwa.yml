@@ -1,0 +1,9 @@
+kind: box/v1
+name: dvwa
+tags:
+  - vulnerable
+image:
+  repository: vulnerables/web-dvwa
+network:
+  ports:
+    - web:8080:80
