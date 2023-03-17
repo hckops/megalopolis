@@ -6,4 +6,4 @@ image:
   repository: bkimminich/juice-shop
 network:
   ports:
-    - web:3000:3000
+    - web:3000
