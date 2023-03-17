@@ -1,0 +1,10 @@
+kind: box/v1
+name: owasp-webgoat
+tags:
+  - vulnerable
+image:
+  repository: webgoat/webgoat
+network:
+  ports:
+    - webgoat:8080
+    - webwolf:9090
