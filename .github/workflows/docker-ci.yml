@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Docker CI
-        uses: hckops/actions/docker-template-action@main
+        uses: hckops/actions/docker-template-action@v0.10.1
         with:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
           DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
