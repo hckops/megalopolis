@@ -22,10 +22,8 @@ jobs:
   docker:
     name: Docker
     runs-on: ubuntu-latest
-    # makes sure it doesn't finish the minutes quota if stalls
     timeout-minutes: 30
 
-    # alternative to loop: parallel builds
     strategy:
       matrix:
         images:
