@@ -42,6 +42,7 @@ jobs:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
           DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
           DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
+          DOCKER_DEFAULT_TAG: 'latest'
           # repository secrets
           SECRET_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           SECRET_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
