@@ -1,0 +1,13 @@
+kind: box/v1
+name: htb-parrot
+tags:
+  - official
+  - cloud
+image:
+  repository: hckops/htb-parrot
+  version: latest
+network:
+  ports:
+    - vnc:5900
+    - novnc:6080
+    - tty:7681
