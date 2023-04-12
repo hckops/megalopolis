@@ -3,9 +3,11 @@ name: parrot
 tags:
   - official
 image:
-  repository: hckops/box-parrot
+  repository: hckops/box-parrot-core
   # sha or tag
   version: latest
+# default
+shell: /bin/bash
 network:
   # name:local[:remote]
   ports:

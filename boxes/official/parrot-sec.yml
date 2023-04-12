@@ -1,10 +1,9 @@
 kind: box/v1
-name: htb-parrot
+name: parrot-sec
 tags:
   - official
-  - cloud
 image:
-  repository: hckops/htb-parrot
+  repository: hckops/box-parrot-sec
   version: latest
 network:
   ports:

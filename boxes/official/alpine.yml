@@ -4,3 +4,4 @@ tags:
   - official
 image:
   repository: hckops/box-alpine
+shell: /bin/ash

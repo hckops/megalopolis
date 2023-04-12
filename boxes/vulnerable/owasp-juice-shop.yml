@@ -4,6 +4,7 @@ tags:
   - vulnerable
 image:
   repository: bkimminich/juice-shop
+shell: none
 network:
   ports:
     - web:3000
