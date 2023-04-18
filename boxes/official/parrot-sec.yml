@@ -10,3 +10,4 @@ network:
     - vnc:5900
     - novnc:6080
     - tty:7681
+    - burp:8080:8090
