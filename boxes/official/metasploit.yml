@@ -1,0 +1,10 @@
+kind: box/v1
+name: metasploit
+tags:
+  - official
+image:
+  repository: hckops/box-metasploit
+  version: latest
+network:
+  ports:
+    - lport:4444
