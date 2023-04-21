@@ -29,6 +29,8 @@ jobs:
         images:
           - path: boxes
             name: box-alpine
+          - path: boxes
+            name: box-metasploit
 
     steps:
       - name: Checkout repository
