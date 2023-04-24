@@ -1,5 +1,7 @@
 ## hckops/htb-postman
 
+* [Walkthrough](https://niqdev.gitbook.io/strawhatsec/htb/linux/postman)
+
 Requirements
 ```bash
 # install pip3
@@ -11,7 +13,7 @@ sudo pip3 install virtualenv
 
 Setup
 ```bash
-cd docker/htb/postman
+cd docker/ctf/htb-postman
 
 # create virtualenv
 virtualenv -p $(which python3) venv
@@ -36,7 +38,7 @@ pip freeze > requirements.txt
 Development
 ```bash
 # build
-docker build -t hckops/htb-postman docker/htb/postman
+docker build -t hckops/htb-postman docker/ctf/htb-postman
 
 # run
 docker run --rm -it --name htb-postman hckops/htb-postman
