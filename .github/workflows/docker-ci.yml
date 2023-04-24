@@ -31,6 +31,9 @@ jobs:
             name: box-alpine
           - path: boxes
             name: box-metasploit
+          # TODO exclude from nightly schedule
+          - path: ctf
+            name: htb-postman
 
     steps:
       - name: Checkout repository
