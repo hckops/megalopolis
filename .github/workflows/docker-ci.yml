@@ -34,6 +34,9 @@ jobs:
           - path: boxes
             name: box-metasploit
             nightly: true
+          - path: .
+            name: alpine-openvpn
+            nightly: true
           # exclude from nightly schedule
           - path: ctf
             name: htb-postman

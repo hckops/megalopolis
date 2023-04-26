@@ -8,6 +8,4 @@ COPY .searchsploit_rc /root/
 RUN git clone --single-branch --depth 1 https://gitlab.com/exploit-database/exploitdb.git /opt/exploitdb && \
   ln -sf /opt/exploitdb/searchsploit /usr/local/bin/searchsploit
 
-RUN apk add openvpn tmux
-
 CMD ["/bin/bash"]
