@@ -1,6 +1,15 @@
 ## hckops/htb-postman
 
+[![Docker Image Version (latest by date)][image-version]][repo-url]
+[![Docker Image Size (latest by date)][image-size]][repo-url]
+
+[image-version]: https://img.shields.io/docker/v/hckops/htb-postman?sort=date&style=for-the-badge
+[image-size]: https://img.shields.io/docker/image-size/hckops/htb-postman?color=orange&sort=date&style=for-the-badge
+[repo-url]: https://hub.docker.com/r/hckops/htb-postman
+
 * [Walkthrough](https://niqdev.gitbook.io/strawhatsec/htb/linux/postman)
+
+> TODO remove defaults envs in "exploit.py"
 
 Requirements
 ```bash
@@ -41,5 +50,5 @@ Development
 docker build -t hckops/htb-postman docker/ctf/htb-postman
 
 # run
-docker run --rm -it --name htb-postman hckops/htb-postman
+docker run --rm -e REMOTE_IP=10.10.14.14 --name htb-postman hckops/htb-postman
 ```

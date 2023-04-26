@@ -1,5 +1,12 @@
 ## hckops/box-metasploit
 
+[![Docker Image Version (latest by date)][image-version]][repo-url]
+[![Docker Image Size (latest by date)][image-size]][repo-url]
+
+[image-version]: https://img.shields.io/docker/v/hckops/box-metasploit?sort=date&style=for-the-badge
+[image-size]: https://img.shields.io/docker/image-size/hckops/box-metasploit?color=orange&sort=date&style=for-the-badge
+[repo-url]: https://hub.docker.com/r/hckops/box-metasploit
+
 Metasploit and SearchSploit
 
 * [Documentation](https://docs.rapid7.com/metasploit)
