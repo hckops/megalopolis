@@ -10,7 +10,7 @@ on:
     branches:
       - main
     paths:
-      - '.github/workflows/docker-*.yml'
+      - '.github/workflows/docker-ci.yml'
       - 'docker/**'
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
@@ -29,9 +29,11 @@ jobs:
         images:
           - path: boxes
             name: box-alpine
+            nightly: true
           - path: boxes
             name: box-metasploit
-          # TODO exclude from nightly schedule
+            nightly: true
+          # excluded from nightly schedule
           - path: ctf
             name: htb-postman
 
@@ -40,6 +42,7 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Docker CI
+        if: ${{ github.event_name != 'schedule' || (github.event_name == 'schedule' && matrix.images.nightly) }}
         uses: hckops/actions/docker-template-action@v0.10.2
         with:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
