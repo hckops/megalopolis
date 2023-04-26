@@ -24,6 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
+    # parallel jobs
     strategy:
       matrix:
         images:
@@ -33,7 +34,7 @@ jobs:
           - path: boxes
             name: box-metasploit
             nightly: true
-          # excluded from nightly schedule
+          # exclude from nightly schedule
           - path: ctf
             name: htb-postman
 
