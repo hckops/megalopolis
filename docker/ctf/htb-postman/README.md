@@ -9,7 +9,7 @@
 
 * [Walkthrough](https://niqdev.gitbook.io/strawhatsec/htb/linux/postman)
 
-> TODO remove defaults envs in "exploit.py"
+> TODO remove default envs in "exploit.py"
 
 Requirements
 ```bash
