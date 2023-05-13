@@ -37,6 +37,9 @@ jobs:
           - path: .
             name: alpine-openvpn
             nightly: true
+          - path: .
+            name: alpine-tty
+            nightly: true
           # exclude from nightly schedule
           - path: ctf
             name: htb-postman
