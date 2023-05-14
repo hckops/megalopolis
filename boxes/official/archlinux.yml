@@ -4,3 +4,7 @@ tags:
   - official
 image:
   repository: archlinux
+# TODO remove
+network:
+  ports:
+    - tty:7681

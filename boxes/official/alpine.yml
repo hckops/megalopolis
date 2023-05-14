@@ -5,3 +5,7 @@ tags:
 image:
   repository: hckops/box-alpine
 shell: /bin/ash
+# TODO remove
+network:
+  ports:
+    - tty:7681
