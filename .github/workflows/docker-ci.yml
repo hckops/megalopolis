@@ -28,17 +28,17 @@ jobs:
     strategy:
       matrix:
         images:
-          - path: boxes
-            name: box-alpine
-            nightly: true
-          - path: boxes
-            name: box-metasploit
-            nightly: true
           - path: .
             name: alpine-openvpn
             nightly: true
           - path: .
             name: alpine-tty
+            nightly: true
+          - path: .
+            name: metasploit
+            nightly: true
+          - path: .
+            name: ubuntu-tty
             nightly: true
           # exclude from nightly schedule
           - path: ctf

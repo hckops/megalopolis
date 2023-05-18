@@ -3,7 +3,7 @@ name: parrot-sec
 tags:
   - official
 image:
-  repository: hckops/box-parrot-sec
+  repository: hckops/parrot-sec
   version: latest
 network:
   ports:

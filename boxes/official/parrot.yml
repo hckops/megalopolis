@@ -3,7 +3,7 @@ name: parrot
 tags:
   - official
 image:
-  repository: hckops/box-parrot-core
+  repository: hckops/parrot-core
   # sha or tag
   version: latest
 # default

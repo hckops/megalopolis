@@ -1,4 +1,4 @@
-## alpine-openvpn
+## hckops/alpine-openvpn
 
 [![Docker Image Version (latest by date)][image-version]][repo-url]
 [![Docker Image Size (latest by date)][image-size]][repo-url]

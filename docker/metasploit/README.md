@@ -1,11 +1,11 @@
-## hckops/box-metasploit
+## hckops/metasploit
 
 [![Docker Image Version (latest by date)][image-version]][repo-url]
 [![Docker Image Size (latest by date)][image-size]][repo-url]
 
-[image-version]: https://img.shields.io/docker/v/hckops/box-metasploit?sort=date&style=for-the-badge
-[image-size]: https://img.shields.io/docker/image-size/hckops/box-metasploit?color=orange&sort=date&style=for-the-badge
-[repo-url]: https://hub.docker.com/r/hckops/box-metasploit
+[image-version]: https://img.shields.io/docker/v/hckops/metasploit?sort=date&style=for-the-badge
+[image-size]: https://img.shields.io/docker/image-size/hckops/metasploit?color=orange&sort=date&style=for-the-badge
+[repo-url]: https://hub.docker.com/r/hckops/metasploit
 
 Metasploit and SearchSploit
 
@@ -18,10 +18,10 @@ Metasploit and SearchSploit
 docker run --rm -it --name metasploit metasploitframework/metasploit-framework
 
 # build
-docker build -t hckops/box-metasploit docker/box-metasploit
+docker build -t hckops/metasploit docker/metasploit
 
 # run
-docker run --rm -it --name box-metasploit -p 4444:4444 hckops/box-metasploit [msfconsole|searchsploit]
+docker run --rm -it --name metasploit -p 4444:4444 hckops/metasploit [msfconsole|searchsploit]
 
 # update db
 searchsploit -u

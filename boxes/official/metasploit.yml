@@ -3,8 +3,10 @@ name: metasploit
 tags:
   - official
 image:
-  repository: hckops/box-metasploit
+  repository: hckops/metasploit
   version: latest
 network:
   ports:
     - lport:4444
+    # TODO see experimental.tty
+    - tty:7681

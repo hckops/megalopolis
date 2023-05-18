@@ -1,4 +1,4 @@
-## alpine-tty
+## hckops/alpine-tty
 
 [![Docker Image Version (latest by date)][image-version]][repo-url]
 [![Docker Image Size (latest by date)][image-size]][repo-url]
@@ -8,6 +8,9 @@
 [repo-url]: https://hub.docker.com/r/hckops/alpine-tty
 
 ```bash
+# tmp container
+docker run --rm --name alpine -it alpine
+
 # build
 docker build -t hckops/alpine-tty docker/alpine-tty
 

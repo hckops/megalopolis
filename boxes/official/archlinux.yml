@@ -4,7 +4,7 @@ tags:
   - official
 image:
   repository: archlinux
-# TODO remove
 network:
   ports:
+    # TODO see experimental.tty
     - tty:7681
