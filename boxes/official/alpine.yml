@@ -4,7 +4,7 @@ tags:
   - official
 image:
   repository: hckops/alpine-tty
-shell: /bin/ash
+shell: /bin/bash
 network:
   ports:
     - tty:7681

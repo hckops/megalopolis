@@ -1,0 +1,29 @@
+kind: lab/v1
+name: htb-alpine
+tags:
+  - official
+  - htb
+boxes:
+  - name: alpine
+    template:
+      name: official/alpine
+    # XS | S | M | L | XL
+    size: S
+    # see alpine-openvpn image
+    vpn: true
+    env:
+      # overrides alpine-tty default password
+      - name: TTYD_PASSWORD
+        value: "alpine"
+      # overrides alpine-openvpn default path
+      - name: OPENVPN_CONFIG
+        value: "/secrets/openvpn/client.ovpn"
+    secrets:
+      # default mount path in the container "/secrets/<NAME>/<REMOTE_REF>"
+      - name: openvpn
+        # absolute or relative local path
+        localRef: ./secrets/htb_eu_vip.ovpn
+        # in kube it's the actual secret key
+        remoteRef: HTB_EU_VIP_OVPN
+        # optional, overrides mount path "/secrets/<NAME>/<ALIAS>"
+        alias: client.ovpn
