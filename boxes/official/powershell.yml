@@ -1,0 +1,6 @@
+kind: box/v1
+name: powershell
+tags:
+  - official
+image:
+  repository: mcr.microsoft.com/powershell
