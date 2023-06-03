@@ -7,11 +7,11 @@ boxes:
   - name: alpine
     template:
       name: official/alpine
-    # XS | S | M | L | XL
-    size: S
+    # XS | S | M | L | XL (case insensitive)
+    size: s
     # see alpine-openvpn image
     vpn: true
-    env:
+    envs:
       # overrides alpine-tty default password
       - name: TTYD_PASSWORD
         value: "alpine"
