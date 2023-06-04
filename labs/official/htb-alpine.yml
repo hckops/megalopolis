@@ -22,8 +22,8 @@ boxes:
       # default mount path in the container "/secrets/<NAME>/<REMOTE_REF>"
       - name: openvpn
         # absolute or relative local path
-        localRef: ./secrets/htb_eu_vip.ovpn
+        localref: ./secrets/htb_eu_vip.ovpn
         # in kube it's the actual secret key
-        remoteRef: HTB_EU_VIP_OVPN
+        remoteref: HTB_EU_VIP_OVPN
         # optional, overrides mount path "/secrets/<NAME>/<ALIAS>"
         alias: client.ovpn
