@@ -7,7 +7,7 @@ boxes:
   - name: alpine
     template:
       name: official/alpine
-    # XS | S | M | L | XL (case insensitive)
+    # XS | S | M | L | XL
     size: s
     # see alpine-openvpn image
     vpn: true
