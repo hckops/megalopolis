@@ -1,6 +1,9 @@
 kind: box/v1
 name: powershell
 tags:
-  - official
+  - unstable
+  - base
 image:
   repository: mcr.microsoft.com/powershell
+# ISSUE fallback to default
+#shell: /usr/bin/pwsh

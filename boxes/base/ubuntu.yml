@@ -1,10 +1,10 @@
 kind: box/v1
-name: alpine
+name: ubuntu
 tags:
+  - base
   - official
 image:
-  repository: hckops/alpine-tty
-shell: /bin/bash
+  repository: hckops/ubuntu-tty
 network:
   ports:
     - tty:7681

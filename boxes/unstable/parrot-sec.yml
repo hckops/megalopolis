@@ -1,16 +1,15 @@
+# WIP private image
 kind: box/v1
-name: parrot
+name: parrot-sec
 tags:
+  - unstable
   - official
 image:
-  repository: hckops/parrot-core
-  # sha or tag
+  repository: hckops/parrot-sec
   version: latest
-# default
-shell: /bin/bash
 network:
-  # name:local[:remote]
   ports:
     - vnc:5900
     - novnc:6080
     - tty:7681
+    - burp:8080:8090

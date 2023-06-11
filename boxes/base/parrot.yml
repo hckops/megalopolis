@@ -1,13 +1,17 @@
 kind: box/v1
-name: parrot-sec
+name: parrot
 tags:
+  - base
   - official
 image:
-  repository: hckops/parrot-sec
+  repository: hckops/parrot-core
+  # sha or tag
   version: latest
+# default
+shell: /bin/bash
 network:
+  # name:local[:remote]
   ports:
     - vnc:5900
     - novnc:6080
     - tty:7681
-    - burp:8080:8090

@@ -1,10 +1,11 @@
 kind: box/v1
 name: archlinux
 tags:
-  - official
+  - base
+  - virtual-tty
 image:
   repository: archlinux
 network:
   ports:
-    # TODO see experimental.tty
-    - tty:7681
+    # not supported by docker
+    - virtual-tty:7681

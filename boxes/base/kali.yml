@@ -1,6 +1,6 @@
 kind: box/v1
 name: kali
 tags:
-  - official
+  - base
 image:
   repository: kalilinux/kali-rolling
