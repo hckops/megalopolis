@@ -1,12 +1,12 @@
 kind: lab/v1
 name: htb-alpine
 tags:
+  - ctf
   - official
-  - htb
 boxes:
   - name: alpine
     template:
-      name: official/alpine
+      name: base/alpine
     # XS | S | M | L | XL
     size: s
     # see alpine-openvpn image
