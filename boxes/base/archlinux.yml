@@ -2,10 +2,9 @@ kind: box/v1
 name: archlinux
 tags:
   - base
-  - virtual-tty
+  - experimental
 image:
   repository: archlinux
 network:
   ports:
-    # experimental
     - virtual-tty:7681

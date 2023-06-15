@@ -3,12 +3,11 @@ name: metasploit
 tags:
   - tool
   - official
-  - virtual-tty
+  - experimental
 image:
   repository: hckops/metasploit
   version: latest
 network:
   ports:
     - lport:4444
-    # experimental
     - virtual-tty:7681
