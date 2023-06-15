@@ -38,6 +38,9 @@ jobs:
             name: metasploit
             nightly: true
           - path: .
+            name: parrot-core
+            nightly: true
+          - path: .
             name: ubuntu-tty
             nightly: true
           # exclude from nightly schedule
