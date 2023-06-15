@@ -1,7 +1,7 @@
 kind: box/v1
 name: powershell
 tags:
-  - unstable
+  - preview
   - base
 image:
   repository: mcr.microsoft.com/powershell

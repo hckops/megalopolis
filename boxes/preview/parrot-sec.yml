@@ -1,10 +1,10 @@
-# WIP private image
 kind: box/v1
 name: parrot-sec
 tags:
-  - unstable
+  - preview
   - official
 image:
+  # WIP private image
   repository: hckops/parrot-sec
   version: latest
 network:
