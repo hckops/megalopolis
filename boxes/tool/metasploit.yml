@@ -10,5 +10,5 @@ image:
 network:
   ports:
     - lport:4444
-    # not supported by docker
+    # experimental
     - virtual-tty:7681

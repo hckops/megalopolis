@@ -1,11 +1,10 @@
 kind: box/v1
 name: owasp-juice-shop
 tags:
-  - unstable
   - vulnerable
 image:
   repository: bkimminich/juice-shop
-# TODO distroless support
+# distroless
 shell: none
 network:
   ports:

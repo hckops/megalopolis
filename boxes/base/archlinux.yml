@@ -7,5 +7,5 @@ image:
   repository: archlinux
 network:
   ports:
-    # not supported by docker
+    # experimental
     - virtual-tty:7681
