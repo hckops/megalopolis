@@ -5,6 +5,7 @@ tags:
   - official
 image:
   repository: hckops/arch-tty
+shell: /bin/fish
 network:
   ports:
     - tty:7681
