@@ -1,0 +1,10 @@
+kind: box/v1
+name: arch
+tags:
+  - base
+  - official
+image:
+  repository: hckops/arch-tty
+network:
+  ports:
+    - tty:7681

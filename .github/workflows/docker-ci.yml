@@ -35,6 +35,9 @@ jobs:
             name: alpine-tty
             nightly: true
           - path: .
+            name: arch-tty
+            nightly: true
+          - path: .
             name: metasploit
             nightly: true
           - path: .
