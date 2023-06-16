@@ -28,7 +28,8 @@ RUN sudo pacman -S --noconfirm \
   fakeroot && \
   git clone --depth 1 https://aur.archlinux.org/tini.git /tmp/tini && \
   cd /tmp/tini && \
-  makepkg -si --noconfirm
+  makepkg -si --noconfirm && \
+  cd && rm -frv /tmp/tini
 
 ENTRYPOINT ["/sbin/tini", "--"]
 CMD ttyd --port "${TTYD_PORT}" --credential "${TTYD_USERNAME}:${TTYD_PASSWORD}" ${TTYD_EXEC}
