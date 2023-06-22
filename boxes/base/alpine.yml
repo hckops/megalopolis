@@ -6,6 +6,12 @@ tags:
 image:
   repository: hckops/alpine-tty
 shell: /bin/bash
+# TODO update schema
+env:
+  - name: TTYD_USERNAME
+    value: admin
+  - name: TTYD_PASSWORD
+    value: "alpine"
 network:
   ports:
     - tty:7681
