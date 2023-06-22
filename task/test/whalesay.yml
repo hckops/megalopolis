@@ -1,0 +1,9 @@
+kind: task/v1
+name: whalesay
+tags:
+  - test
+image:
+  repository: docker/whalesay
+command: [ cowsay ]
+args:
+  - "hello world"
