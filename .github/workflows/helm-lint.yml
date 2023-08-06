@@ -1,0 +1,20 @@
+name: helm-lint
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/helm-lint.yml'
+      - 'charts/**'
+
+jobs:
+  helm-lint:
+    name: Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Helm Lint
+        uses: hckops/actions/helm-lint-action@v0.10.6
