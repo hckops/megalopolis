@@ -1,15 +1,21 @@
+{{- if .Values.ports }}
+---
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "box.fullname" . }}
+  name: {{ include "application.fullname" . }}
+  namespace: {{ .Values.namespace }}
   labels:
-    {{- include "box.labels" . | nindent 4 }}
+    {{- include "application.labels" . | nindent 4 }}
 spec:
-  type: {{ .Values.service.type }}
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: http
-      protocol: TCP
-      name: http
   selector:
-    {{- include "box.selectorLabels" . | nindent 4 }}
+    {{- include "application.labels" . | nindent 4 }}
+  type: ClusterIP
+  ports:
+  {{- range $key, $value := .Values.ports }}
+  - name: {{ $key }}
+    protocol: TCP
+    port: {{ $value.port }}
+    targetPort: {{ $key }}-svc
+  {{- end }}
+{{- end }}
