@@ -37,11 +37,15 @@ Application fullname
 {{- end }}
 
 {{/*
-Application labels
+Application labels: TODO mergeOverwrite
 */}}
 {{- define "application.labels" -}}
+{{- if .Values.labels }}
+{{- .Values.labels | toYaml }}
+{{- else -}}
 app.kubernetes.io/name: {{ include "application.name" . }}
 app.kubernetes.io/instance: {{ include "application.repository" . }}
 app.kubernetes.io/version: {{ .Values.image.version | quote }}
 app.kubernetes.io/managed-by: hckops
+{{- end }}
 {{- end }}

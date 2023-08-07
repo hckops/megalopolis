@@ -7,10 +7,25 @@ nameOverride: ""
 # name without version suffix
 fullnameOverride: ""
 
+annotations: {}
+  # com.hckops.example: true
+
+labels: {}
+  # app.kubernetes.io/managed-by: example
+  # com.hckops.schema.kind: box-v1
+
 image:
   repository: INVALID_ORG/NAME
   version: latest
   pullPolicy: Always
+
+ports: {}
+  # vnc:
+  #   port: 5900
+  # novnc:
+  #   port: 6080
+  # tty:
+  #   port: 7681
 
 env: []
   # - name: PASSWORD
@@ -22,11 +37,3 @@ resources: {}
   #   cpu: 500m
   # limits:
   #   memory: 512Mi
-
-ports: {}
-  # vnc:
-  #   port: 5900
-  # novnc:
-  #   port: 6080
-  # tty:
-  #   port: 7681

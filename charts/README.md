@@ -7,5 +7,5 @@
 helm create charts/<CHART_NAME>
 
 # verify chart
-helm template --debug charts/box > tmp-box.yaml
+helm template charts/box --debug --values charts/box/values.yaml > tmp-box.yaml
 ```

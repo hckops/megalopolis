@@ -7,6 +7,10 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     {{- include "application.labels" . | nindent 4 }}
+  {{- with .Values.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 spec:
   selector:
     {{- include "application.labels" . | nindent 4 }}
