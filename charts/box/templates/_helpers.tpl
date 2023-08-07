@@ -41,6 +41,7 @@ Application labels
 */}}
 {{- define "application.labels" -}}
 app.kubernetes.io/name: {{ include "application.name" . }}
+app.kubernetes.io/instance: {{ include "application.repository" . }}
 app.kubernetes.io/version: {{ .Values.image.version | quote }}
 app.kubernetes.io/managed-by: hckops
 {{- end }}
