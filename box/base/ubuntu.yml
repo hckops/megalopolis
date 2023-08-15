@@ -5,6 +5,9 @@ tags:
   - official
 image:
   repository: hckops/ubuntu-tty
+env:
+  - TTYD_USERNAME=root
+  - TTYD_PASSWORD=ubuntu
 network:
   ports:
     - tty:7681

@@ -9,8 +9,11 @@ image:
   version: latest
 # default
 shell: /bin/bash
+env:
+  - USERNAME=root
+  - PASSWORD=parrot
 network:
-  # name:local[:remote]
+  # name:remote[:local]
   ports:
     - vnc:5900
     - novnc:6080

@@ -6,6 +6,9 @@ tags:
 image:
   repository: hckops/arch-tty
 shell: /bin/fish
+env:
+  - TTYD_USERNAME=root
+  - TTYD_PASSWORD=arch
 network:
   ports:
     - tty:7681
