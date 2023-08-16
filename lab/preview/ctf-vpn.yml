@@ -5,11 +5,10 @@ tags:
 - official
 
 boxes:
-- name: arch
-  template:
+- template:
     name: box/base/arch
 
-- name: parrot
+- alias: parrot
   template:
     name: box/base/parrot
     env:
@@ -22,15 +21,13 @@ boxes:
   dumps:
     - seclists
 
-# (DOCKER/KUBE) hckctl lab ctf-vpn --input vpn.default.ref=/my/local/path/config.ovpn
-# (CLOUD) hckctl lab ctf-vpn --input password=CHANGEME --input vpn.default.ref=SECRET_REF
 network:
   vpn:
   - name: default
     ref: ${input.vpn.default.ref}
 
 ########## CLOUD ONLY ##########
-dumps:
+dump:
   git:
   - name: seclists
     url: https://github.com/danielmiessler/SecLists
