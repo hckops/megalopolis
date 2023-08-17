@@ -2,19 +2,20 @@
 namespace: INVALID_NAMESPACE
 # e.g. "box" without dash
 namePrefix: ""
-# nameOverride has precedence over namePrefix
+# nameOverride has precedence over namePrefix e.g. box-alpine-12345
 nameOverride: ""
-# name without version suffix
+# name without version suffix e.g. box-alpine-12345
 fullnameOverride: ""
 
 annotations: {}
   # com.hckops.example: true
 
 labels: {}
-  # app.kubernetes.io/managed-by: example
+  # app.kubernetes.io/managed-by: hckops
   # com.hckops.schema.kind: box-v1
 
 image:
+  # e.g. hckops/alpine-tty
   repository: INVALID_ORG/NAME
   version: latest
   pullPolicy: Always
@@ -37,3 +38,16 @@ resources: {}
   #   cpu: 500m
   # limits:
   #   memory: 512Mi
+
+vpn:
+  enabled: false
+  image:
+    repository: hckops/alpine-openvpn
+    version: latest
+    pullPolicy: Always
+  secret:
+    create: false
+    volumeName: sidecar-vpn-volume
+    basePath: /secrets
+    path: openvpn/client.ovpn
+    value: INVALID_VALUE
