@@ -8,4 +8,7 @@ helm create charts/<CHART_NAME>
 
 # verify chart
 helm template charts/box --debug --values charts/box/values.yaml > tmp-box.yaml
+
+# test chart
+helm template charts/box | kubectl apply -f -
 ```

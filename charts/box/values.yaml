@@ -8,7 +8,7 @@ nameOverride: ""
 fullnameOverride: ""
 
 annotations: {}
-  # com.hckops.example: true
+  # com.hckops.foo: bar
 
 labels: {}
   # app.kubernetes.io/managed-by: hckops
@@ -50,4 +50,4 @@ vpn:
     volumeName: sidecar-vpn-volume
     basePath: /secrets
     path: openvpn/client.ovpn
-    value: INVALID_VALUE
+    value: INVALID_SECRET
