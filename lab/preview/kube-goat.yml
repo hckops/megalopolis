@@ -1,0 +1,17 @@
+kind: lab/v1
+name: kube-goat
+tags:
+- preview
+- official
+
+scenario:
+- kind: box/v1
+  template:
+    name: box/base/ubuntu
+
+- kind: infra/v1
+  source: helm
+  alias: kube-goat-home
+  repositoryUrl: https://github.com/madhuakula/kubernetes-goat.git
+  targetRevision: master
+  path: kubernetes-goat/scenarios/kubernetes-goat-home

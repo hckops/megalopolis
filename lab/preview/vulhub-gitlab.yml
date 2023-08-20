@@ -1,0 +1,17 @@
+kind: lab/v1
+name: vulhub-gitlab
+tags:
+- preview
+- official
+
+scenario:
+- kind: box/v1
+  template:
+    name: box/base/ubuntu
+
+- kind: infra/v1
+  source: compose
+  alias: CVE-2016-9086
+  repositoryUrl: https://github.com/vulhub/vulhub.git
+  targetRevision: master
+  path: gitlab/CVE-2016-9086
