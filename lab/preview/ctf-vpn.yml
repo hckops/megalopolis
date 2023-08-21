@@ -4,30 +4,29 @@ tags:
 - preview
 - official
 
-scenario:
-- kind: box/v1
-  template:
-    name: box/base/arch
+boxes:
+- template: box/base/arch
 
-- kind: box/v1
-  template:
-    name: box/base/parrot
-    env:
-    - PASSWORD=${input.password:random}
+- template: box/base/parrot
+  env:
+  - PASSWORD=${input.password:random}
   size: M
-  # e.g. "OPENVPN_REF"
   vpn: default
   alias: parrot
-  ports:
-  - name: tty
-    public: true
+  publicPorts:
+  - tty
   dumps:
-  - group: wordlists
-    url: https://github.com/danielmiessler/SecLists
-    branch: "master"
+  - seclist
 
 network:
   vpn:
   - name: default
-    # e.g. "/my/local/path/config.ovpn"
+    # e.g. "OPENVPN_REF"
     config: ${input.vpn.default}
+
+dumps:
+  git:
+  - name: seclists
+    group: wordlists
+    url: https://github.com/danielmiessler/SecLists
+    branch: "master"

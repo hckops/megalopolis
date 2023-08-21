@@ -4,14 +4,12 @@ tags:
 - preview
 - official
 
-scenario:
-- kind: box/v1
-  template:
-    name: box/base/ubuntu
+boxes:
+- template: box/base/ubuntu
 
-- kind: infra/v1
+infra:
+- alias: CVE-2016-9086
   source: compose
-  alias: CVE-2016-9086
   repositoryUrl: https://github.com/vulhub/vulhub.git
   targetRevision: master
   path: gitlab/CVE-2016-9086
