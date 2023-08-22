@@ -1,0 +1,9 @@
+kind: dump/v1
+name: SecLists
+tags:
+- git
+- official
+group: wordlists
+git:
+  repositoryUrl: https://github.com/danielmiessler/SecLists
+  branch: master

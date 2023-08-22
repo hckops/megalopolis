@@ -1,0 +1,9 @@
+kind: dump/v1
+name: LinPEAS
+tags:
+- git
+- official
+group: privesc
+git:
+  repositoryUrl: https://github.com/carlospolop/PEASS-ng.git
+  branch: master
