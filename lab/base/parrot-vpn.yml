@@ -4,12 +4,12 @@ tags:
 - base
 - official
 box:
-  alias: ${input.alias:parrot}
+  alias: ${alias:parrot}
   template: box/base/parrot
   env:
-  - PASSWORD=${input.password:random}
+  - PASSWORD=${password:random}
   size: M
-  vpn: ${input.vpn:default}
+  vpn: ${vpn:default}
   ########## CLOUD ONLY ##########
   ports:
   - vnc
