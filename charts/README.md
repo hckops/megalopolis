@@ -15,8 +15,8 @@ helm template charts/box | kubectl apply -f -
 
 * [helm/chart-releaser](https://helm.sh/docs/howto/chart_releaser_action)
 
-How to init gh-pages
 ```bash
+# init gh-pages
 git checkout --orphan gh-pages
 git rm -rf .
 echo "helm-charts" > index.html
