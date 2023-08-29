@@ -20,6 +20,9 @@ jobs:
         uses: hckops/actions/helm-lint-action@v0.10.8
 
   helm-release:
+    # release depends on lint
+    needs: helm-lint
+
     name: Release
     runs-on: ubuntu-latest
     permissions:
