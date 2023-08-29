@@ -25,7 +25,6 @@ spec:
       {{- end }}
     spec:
       containers:
-      # main
       - name: {{ include "application.repository" . }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.version }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
@@ -50,39 +49,3 @@ spec:
         resources:
           {{- toYaml . | nindent 10 }}
         {{- end }}
-      # sidecar vpn
-      {{- if .Values.vpn.enabled }}
-      - name: "sidecar-vpn"
-        image: "{{ .Values.vpn.image.repository }}:{{ .Values.vpn.image.version }}"
-        imagePullPolicy: {{ .Values.vpn.image.pullPolicy }}
-        env:
-        - name: OPENVPN_CONFIG
-          value: "{{ .Values.vpn.secret.basePath }}/{{ .Values.vpn.secret.path }}"
-        securityContext:
-          capabilities:
-            add: ["NET_ADMIN"]
-        volumeMounts:
-        - name: tun-device-volume
-          mountPath: /dev/net/tun
-          readOnly: true
-        - name: {{ .Values.vpn.secret.volumeName }}
-          mountPath: {{ .Values.vpn.secret.basePath }}
-          readOnly: true
-      {{- end }}
-      # volumes
-      {{- if .Values.vpn.enabled }}
-      volumes:
-      {{- if .Values.vpn.enabled }}
-      - name: tun-device-volume
-        hostPath:
-          path: /dev/net/tun
-      {{- end }}
-      {{- if .Values.vpn.secret.create }}
-      - name: {{ .Values.vpn.secret.volumeName }}
-        secret:
-          secretName: {{ include "application.fullname" . }}-sidecar-vpn-secret
-          items:
-          - key: openvpn-config
-            path: {{ .Values.vpn.secret.path }}
-      {{- end }}
-      {{- end }}
