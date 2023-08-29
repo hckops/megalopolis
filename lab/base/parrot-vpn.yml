@@ -5,9 +5,10 @@ tags:
 - official
 box:
   alias: ${alias:parrot}
-  template: box/base/parrot
-  env:
-  - PASSWORD=${password:random}
+  template:
+    name: box/base/parrot
+    env:
+    - PASSWORD=${password:random}
   size: M
   vpn: ${vpn:default}
   ########## CLOUD ONLY ##########
