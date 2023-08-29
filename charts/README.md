@@ -1,6 +1,7 @@
 ## Charts
 
 * [Helm](https://helm.sh/docs)
+* [helm/chart-releaser](https://helm.sh/docs/howto/chart_releaser_action)
 
 ```bash
 # new helm chart
