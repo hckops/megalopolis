@@ -7,6 +7,9 @@ image:
   # WIP private image
   repository: hckops/parrot-sec
   version: latest
+env:
+  - USERNAME=root
+  - PASSWORD=parrot
 network:
   ports:
     - vnc:5900
