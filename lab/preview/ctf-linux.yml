@@ -16,5 +16,5 @@ box:
   - novnc
   - tty
   dumps:
-  - seclist
+  - seclists
   - linpeas
