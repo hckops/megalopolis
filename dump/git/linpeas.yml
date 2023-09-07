@@ -5,5 +5,5 @@ tags:
 - official
 group: privesc
 git:
-  repositoryUrl: https://github.com/carlospolop/PEASS-ng.git
+  repository: https://github.com/carlospolop/PEASS-ng.git
   branch: master

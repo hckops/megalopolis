@@ -5,5 +5,5 @@ tags:
 - official
 group: wordlists
 git:
-  repositoryUrl: https://github.com/danielmiessler/SecLists
+  repository: https://github.com/danielmiessler/SecLists
   branch: master
