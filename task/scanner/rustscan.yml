@@ -2,13 +2,10 @@ kind: task/v1
 name: RustScan
 tags:
   - scanner
-  - houdini
 pages:
   - name: source
     url: https://github.com/RustScan/RustScan
 license: GPL-3.0
-site:
-  - https://github.com/RustScan/RustScan
 image:
   repository: rustscan/rustscan
   version: 2.1.1

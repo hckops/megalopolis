@@ -2,6 +2,7 @@ kind: task/v1
 name: Nmap
 tags:
   - scanner
+  - houdini
 pages:
   - name: guide
     url: https://nmap.org/book/man.html
