@@ -1,8 +1,7 @@
 kind: dump/v1
 name: SecLists
 tags:
-- git
-- official
+  - git
 group: wordlists
 git:
   repository: https://github.com/danielmiessler/SecLists

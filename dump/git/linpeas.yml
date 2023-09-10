@@ -1,8 +1,7 @@
 kind: dump/v1
 name: LinPEAS
 tags:
-- git
-- official
+  - git
 group: privesc
 git:
   repository: https://github.com/carlospolop/PEASS-ng.git
