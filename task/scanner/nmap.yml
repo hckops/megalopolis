@@ -1,0 +1,24 @@
+kind: task/v1
+name: Nmap
+tags:
+  - scanner
+pages:
+  - name: guide
+    url: https://nmap.org/book/man.html
+  - name: docker
+    url: https://houdini.secsi.io/tool/nmap
+  - name: license
+    url: https://nmap.org/book/man-legal.html
+license: custom
+image:
+  repository: secsi/nmap
+  version: latest
+commands:
+  - name: default
+    args:
+      - "-p ${port:80}"
+      - "${address:127.0.0.1}"
+  - name: full
+    args:
+      - "-sC -sV -oA nmap.out"
+      - "${address:127.0.0.1}"

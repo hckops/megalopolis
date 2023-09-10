@@ -1,0 +1,19 @@
+kind: task/v1
+name: RustScan
+tags:
+  - scanner
+  - houdini
+pages:
+  - name: source
+    url: https://github.com/RustScan/RustScan
+license: GPL-3.0
+site:
+  - https://github.com/RustScan/RustScan
+image:
+  repository: rustscan/rustscan
+  version: 2.1.1
+commands:
+  - name: default
+    args:
+      - "-a ${address:127.0.0.1}"
+      - "--ulimit 5000"
