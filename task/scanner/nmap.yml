@@ -15,11 +15,18 @@ image:
   repository: secsi/nmap
   version: latest
 commands:
+  - name: help
+    arguments:
+      - "--help"
+  - name: version
+    arguments:
+      - "--version"
   - name: default
-    args:
+    arguments:
+      - "${address:127.0.0.1}"
       - "-p ${port:80}"
-      - "${address:127.0.0.1}"
   - name: full
-    args:
-      - "-sC -sV -oA nmap.out"
+    # TODO test single line arguments
+    arguments:
       - "${address:127.0.0.1}"
+      - "-sC -sV -oA nmap.out"

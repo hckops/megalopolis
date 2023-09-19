@@ -10,7 +10,13 @@ image:
   repository: rustscan/rustscan
   version: 2.1.1
 commands:
+  - name: help
+    arguments:
+      - "--help"
+  - name: version
+    arguments:
+      - "--version"
   - name: default
-    args:
+    arguments:
       - "-a ${address:127.0.0.1}"
       - "--ulimit 5000"

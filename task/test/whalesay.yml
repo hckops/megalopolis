@@ -6,9 +6,8 @@ image:
   repository: docker/whalesay
 commands:
   - name: default
-    args:
-      - "cowsay"
-      - "hello world"
+    arguments:
+      - "cowsay ${hello:hckops}"
 # default
 output:
   stdout: true
