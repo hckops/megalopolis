@@ -26,7 +26,6 @@ commands:
       - "${address:127.0.0.1}"
       - "-p ${port:80}"
   - name: full
-    # TODO test single line arguments
     arguments:
       - "${address:127.0.0.1}"
-      - "-sC -sV -oA nmap.out"
+      - "-sC -sV"

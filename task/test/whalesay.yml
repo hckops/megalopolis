@@ -7,5 +7,4 @@ image:
 commands:
   - name: default
     arguments:
-      - "cowsay"
-      - "${hello:hckops}"
+      - "cowsay ${hello:hckops}"

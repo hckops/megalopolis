@@ -18,5 +18,4 @@ commands:
       - "--version"
   - name: default
     arguments:
-      - "-a ${address:127.0.0.1}"
-      - "--ulimit 5000"
+      - "-a ${address:127.0.0.1} --ulimit 5000"
