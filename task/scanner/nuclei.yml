@@ -1,0 +1,18 @@
+kind: task/v1
+name: Nuclei
+tags:
+  - scanner
+image:
+  repository: projectdiscovery/nuclei
+  version: latest
+# add commands https://houdini.secsi.io/tool/nuclei
+commands:
+  - name: help
+    arguments:
+      - "--help"
+  - name: version
+    arguments:
+      - "--version"
+  - name: default
+    arguments:
+      - "-u ${target:127.0.0.1}"
