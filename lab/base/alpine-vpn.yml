@@ -13,6 +13,5 @@ box:
   size: XS
   # e.g. "/my/local/path/config.ovpn"
   vpn: ${vpn:default}
-  ########## CLOUD ONLY ##########
   ports:
   - tty
