@@ -1,0 +1,22 @@
+kind: task/v1
+name: gobuster
+tags:
+  - fuzzer
+# https://houdini.secsi.io/tool/gobuster
+image:
+  repository: secsi/gobuster
+  version: latest
+commands:
+  - name: help
+    arguments:
+      - "--help"
+  - name: version
+    arguments:
+      - "--version"
+  # TODO add examples and descriptions
+  - name: default
+    arguments:
+      - "dir"
+      - "-w ${dir:/hck/share}/${wordlist:wordlists/SecLists/Discovery/Web-Content/common.txt}"
+      - "-u http://${address:127.0.0.1}"
+      - "-t 100"

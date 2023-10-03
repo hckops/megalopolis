@@ -15,4 +15,4 @@ commands:
       - "--version"
   - name: default
     arguments:
-      - "-u ${target:127.0.0.1}"
+      - "-u ${address:127.0.0.1}"

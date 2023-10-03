@@ -1,0 +1,20 @@
+kind: task/v1
+name: ffuf
+tags:
+  - fuzzer
+# https://houdini.secsi.io/tool/ffuf
+image:
+  repository: secsi/ffuf
+  version: latest
+commands:
+  - name: help
+    arguments:
+      - "--help"
+  - name: version
+    arguments:
+      - "--version"
+  # TODO add examples and descriptions
+  - name: default
+    arguments:
+      - "-w ${dir:/hck/share}/${wordlist:wordlists/SecLists/Discovery/Web-Content/common.txt}"
+      - "-u http://${address:127.0.0.1}/FUZZ"
