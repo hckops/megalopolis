@@ -1,0 +1,8 @@
+kind: dump/v1
+name: trickest
+tags:
+  - git
+group: wordlists
+git:
+  repository: https://github.com/trickest/wordlists.git
+  branch: master
