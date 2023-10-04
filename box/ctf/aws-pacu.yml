@@ -1,0 +1,15 @@
+kind: box/v1
+name: aws-pacu
+tags:
+  - ctf
+
+# TODO
+# https://github.com/DataDog/stratus-red-team
+# https://github.com/BishopFox/cloudfoxable
+# https://github.com/RhinoSecurityLabs/cloudgoat
+# https://github.com/ermetic-research/cnappgoat
+
+# https://github.com/RhinoSecurityLabs/pacu
+image:
+  repository: rhinosecuritylabs/pacu
+shell: /bin/sh
