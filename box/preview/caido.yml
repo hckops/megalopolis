@@ -1,0 +1,11 @@
+kind: box/v1
+name: caido
+tags:
+  - preview
+  - web
+image:
+  repository: caido/caido
+  version: latest
+network:
+  ports:
+    - web:8080:7000
