@@ -1,0 +1,13 @@
+kind: box/v1
+name: htb-postman
+tags:
+  - ctf
+image:
+  repository: hckops/htb-postman
+env:
+  # TODO remove and fix exploit to use vpn ip "/sbin/ip addr"
+  # https://stackoverflow.com/questions/166506/finding-local-ip-addresses-using-pythons-stdlib
+  - REMOTE_IP=10.10.14.5
+network:
+  ports:
+    - pwn:4444

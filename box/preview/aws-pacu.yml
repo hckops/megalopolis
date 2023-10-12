@@ -1,6 +1,7 @@
 kind: box/v1
 name: aws-pacu
 tags:
+  - preview
   - ctf
 
 # TODO
