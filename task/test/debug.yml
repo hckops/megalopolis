@@ -1,0 +1,10 @@
+kind: task/v1
+name: debug
+tags:
+  - test
+image:
+  repository: busybox
+commands:
+  - name: default
+    arguments:
+      - "whoami"
