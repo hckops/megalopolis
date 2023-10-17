@@ -1,8 +1,8 @@
 kind: lab/v1
 name: parrot-vpn
 tags:
-- base
-- official
+  - base
+  - official
 box:
   alias: ${alias:parrot}
   template:

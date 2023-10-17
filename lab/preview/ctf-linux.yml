@@ -1,8 +1,9 @@
 kind: lab/v1
 name: ctf-linux
 tags:
-- base
-- official
+  - preview
+  - base
+  - official
 box:
   template:
     name: box/preview/parrot-sec
