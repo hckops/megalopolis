@@ -8,11 +8,9 @@ image:
 # add commands https://houdini.secsi.io/tool/nuclei
 commands:
   - name: help
-    arguments:
-      - "--help"
+    arguments: [ "nuclei --help" ]
   - name: version
-    arguments:
-      - "--version"
+    arguments: [ "nuclei --version" ]
   - name: default
     arguments:
-      - "-u ${address:127.0.0.1}"
+      - "nuclei -u ${address:127.0.0.1}"

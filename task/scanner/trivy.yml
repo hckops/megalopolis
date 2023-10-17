@@ -7,11 +7,9 @@ image:
   version: latest
 commands:
   - name: help
-    arguments:
-      - "--help"
+    arguments: [ "trivy --help" ]
   - name: version
-    arguments:
-      - "--version"
+    arguments: [ "trivy --version" ]
   - name: default
     arguments:
-      - "image ${image:python:3.4-alpine}"
+      - "trivy image ${image:python:3.4-alpine}"

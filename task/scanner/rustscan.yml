@@ -11,11 +11,9 @@ image:
   version: 2.1.1
 commands:
   - name: help
-    arguments:
-      - "--help"
+    arguments: [ "rustscan --help" ]
   - name: version
-    arguments:
-      - "--version"
+    arguments: [ "rustscan --version" ]
   - name: default
     arguments:
-      - "-a ${address:127.0.0.1} --ulimit 5000"
+      - "rustscan -a ${address:127.0.0.1} --ulimit 5000"

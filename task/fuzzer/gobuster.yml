@@ -8,15 +8,14 @@ image:
   version: latest
 commands:
   - name: help
-    arguments:
-      - "--help"
+    arguments: [ "gobuster --help" ]
   - name: version
-    arguments:
-      - "--version"
-  # TODO add examples and descriptions
+    arguments: [ "gobuster --version" ]
   - name: default
+    #description: "TODO"
+    #inputs: ["dir", "wordlist", "address"]
     arguments:
-      - "dir"
+      - "gobuster dir"
       - "-w ${dir:/hck/share}/${wordlist:wordlists/SecLists/Discovery/Web-Content/common.txt}"
       - "-u http://${address:127.0.0.1}"
       - "-t 100"

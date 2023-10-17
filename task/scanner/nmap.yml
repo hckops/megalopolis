@@ -17,16 +17,14 @@ image:
 # add commands https://cheatsheet.haax.fr/network/port-scanning/nmap_cheatsheet
 commands:
   - name: help
-    arguments:
-      - "--help"
+    arguments: [ "nmap --help" ]
   - name: version
-    arguments:
-      - "--version"
+    arguments: [ "nmap --version" ]
   - name: default
     arguments:
-      - "${address:127.0.0.1}"
+      - "nmap ${address:127.0.0.1}"
       - "-p ${port:80}"
   - name: full
     arguments:
-      - "${address:127.0.0.1}"
+      - "nmap ${address:127.0.0.1}"
       - "-sC -sV"
