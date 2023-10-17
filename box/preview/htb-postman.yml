@@ -1,6 +1,7 @@
 kind: box/v1
 name: htb-postman
 tags:
+  - preview
   - ctf
 image:
   repository: hckops/htb-postman

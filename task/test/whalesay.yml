@@ -6,5 +6,7 @@ image:
   repository: docker/whalesay
 commands:
   - name: default
+    #description: "TODO"
+    #inputs: ["hello"]
     arguments:
       - "cowsay ${hello:hckops}"

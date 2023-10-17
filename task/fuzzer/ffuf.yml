@@ -12,8 +12,6 @@ commands:
   - name: version
     arguments: [ "ffuf --version" ]
   - name: default
-    #description: "TODO"
-    #inputs: ["dir", "wordlist", "address"]
     arguments:
       - "ffuf"
       - "-w ${dir:/hck/share}/${wordlist:wordlists/SecLists/Discovery/Web-Content/common.txt}"
