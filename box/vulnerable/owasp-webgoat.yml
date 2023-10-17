@@ -4,7 +4,9 @@ tags:
   - vulnerable
 image:
   repository: webgoat/webgoat
+shell: none
 network:
   ports:
+    # http://localhost:8080/WebGoat
     - webgoat:8080
     - webwolf:9090

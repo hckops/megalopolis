@@ -3,7 +3,9 @@ name: dvwa
 tags:
   - vulnerable
 image:
+  # TODO old image, use lab
   repository: vulnerables/web-dvwa
+shell: none
 network:
   ports:
-    - web:8080:80
+    - web:80:8080
