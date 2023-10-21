@@ -10,7 +10,7 @@ commands:
   - name: help
     arguments: [ "ffuf --help" ]
   - name: version
-    arguments: [ "ffuf --version" ]
+    arguments: [ "ffuf -V" ]
   - name: default
     arguments:
       - "ffuf"
