@@ -10,6 +10,5 @@ RUN apk upgrade --update && apk add --no-cache \
 
 WORKDIR /root
 
-COPY run.sh /usr/sbin/openvpn-run
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD /usr/sbin/openvpn-run
+CMD /usr/sbin/openvpn "${OPENVPN_CONFIG}"

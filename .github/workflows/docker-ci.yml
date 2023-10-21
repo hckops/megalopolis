@@ -32,6 +32,9 @@ jobs:
             name: alpine-openvpn
             nightly: true
           - path: .
+            name: alpine-openvpn-privileged
+            nightly: true
+          - path: .
             name: alpine-tty
             nightly: true
           - path: .
