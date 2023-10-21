@@ -22,5 +22,3 @@ docker run --rm --name alpine-openvpn \
 # exec
 docker exec -it alpine-openvpn bash
 ```
-
-**Without setting `net.ipv6.conf.all.disable_ipv6` it might leaks IPv6 info**
