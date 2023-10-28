@@ -1,0 +1,17 @@
+kind: task/v1
+name: sqlmap
+tags:
+  - fuzzer
+# https://github.com/sqlmapproject/sqlmap/wiki/Usage
+image:
+  repository: secsi/sqlmap
+  version: latest
+commands:
+  - name: help
+    arguments: [ "/sqlmap/sqlmap.py -hh" ]
+  - name: version
+    arguments: [ "/sqlmap/sqlmap.py --version" ]
+  - name: default
+    arguments:
+      - "/sqlmap/sqlmap.py"
+      - "-u ${address:127.0.0.1:3000}"
