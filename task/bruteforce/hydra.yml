@@ -1,7 +1,7 @@
 kind: task/v1
 name: hydra
 tags:
-  - fuzzer
+  - bruteforce
 image:
   repository: vanhauser/hydra
   version: latest

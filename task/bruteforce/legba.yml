@@ -1,7 +1,7 @@
 kind: task/v1
 name: legba
 tags:
-  - fuzzer
+  - bruteforce
 image:
   repository: evilsocket/legba
   version: latest
