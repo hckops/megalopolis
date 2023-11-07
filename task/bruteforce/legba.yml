@@ -1,0 +1,22 @@
+kind: task/v1
+name: legba
+tags:
+  - fuzzer
+image:
+  repository: evilsocket/legba
+  version: latest
+commands:
+  - name: help
+    arguments: [ "legba --help" ]
+  - name: version
+    arguments: [ "legba --version" ]
+  - name: default
+    arguments: [ "legba --help" ]
+  - name: juiceshop
+    arguments:
+      - "legba http"
+      - "--target http://${address:box-owasp-juice-shop-RANDOM}:3000/rest/user/login"
+      - "--username /hck/share/users.txt"
+      - "--password admin123"
+      - "--http-method POST"
+      - "--http-payload 'email={USERNAME}&password={PASSWORD}'"

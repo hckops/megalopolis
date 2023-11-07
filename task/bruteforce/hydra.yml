@@ -1,0 +1,20 @@
+kind: task/v1
+name: hydra
+tags:
+  - fuzzer
+image:
+  repository: vanhauser/hydra
+  version: latest
+commands:
+  - name: help
+    arguments: [ "hydra -help" ]
+  - name: version
+    arguments: [ "hydra -version" ]
+  - name: default
+    arguments: [ "hydra -help" ]
+  - name: juiceshop
+    arguments:
+      - "hydra -L /hck/share/users.txt -p admin123"
+      - "${address:box-owasp-juice-shop-RANDOM}"
+      - "-s ${port:3000} http-post-form ${path:/rest/user/login}:email=^USER^&password=^PASS^:failure"
+      - "-w 100 -V"
