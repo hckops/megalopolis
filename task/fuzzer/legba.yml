@@ -1,0 +1,16 @@
+kind: task/v1
+name: legba
+tags:
+  - fuzzer
+image:
+  repository: evilsocket/legba
+  version: latest
+commands:
+  - name: help
+    arguments: [ "legba --help" ]
+  - name: version
+    arguments: [ "legba --version" ]
+  - name: default
+    arguments:
+      - "legba http"
+      - "--target ${address:127.0.0.1:3000}"
