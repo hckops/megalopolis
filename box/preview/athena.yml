@@ -1,0 +1,8 @@
+kind: box/v1
+name: athena
+tags:
+  - preview
+  - base
+image:
+  repository: athenaos/core
+  version: latest
