@@ -1,0 +1,8 @@
+kind: box/v1
+name: PwnPad
+tags:
+  - preview
+  - ctf
+image:
+  repository: platypew/pwnpad
+  version: latest
