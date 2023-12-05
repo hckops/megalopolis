@@ -11,4 +11,7 @@ commands:
   - name: help
     arguments: [ "/usr/src/CeWL/cewl.rb --help" ]
   - name: default
-    arguments: [ "/usr/src/CeWL/cewl.rb --help" ]
+    arguments:
+      - "/usr/src/CeWL/cewl.rb"
+      - "http://${address:127.0.0.1}"
+      - "-w ${dir:/hck/share}/${path:output.txt}"
