@@ -1,0 +1,14 @@
+kind: task/v1
+name: feroxbuster
+tags:
+  - fuzzer
+image:
+  repository: epi052/feroxbuster
+  version: latest
+commands:
+  - name: help
+    arguments: [ "feroxbuster --help" ]
+  - name: version
+    arguments: [ "feroxbuster --version" ]
+  - name: default
+    arguments: [ "feroxbuster --help" ]
