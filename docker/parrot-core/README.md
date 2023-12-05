@@ -10,7 +10,7 @@
 * [Parrot Security OS](https://parrotsec.org)
 
 ```bash
-# run container
+# run base container
 docker run --rm -it parrotsec/core
 
 # build

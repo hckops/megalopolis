@@ -2,5 +2,12 @@ kind: box/v1
 name: kali
 tags:
   - base
+  - official
 image:
-  repository: kalilinux/kali-rolling
+  repository: hckops/kali-core
+env:
+  - VNC_PASSWORD=kali
+network:
+  ports:
+    - vnc:5900
+    - novnc:6080
