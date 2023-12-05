@@ -1,0 +1,14 @@
+kind: task/v1
+name: CeWL
+tags:
+  - bruteforce
+  - wordlist
+image:
+  # obsolete https://github.com/hckops/megalopolis/issues/17
+  repository: nocflame/cewl
+  version: latest
+commands:
+  - name: help
+    arguments: [ "/usr/src/CeWL/cewl.rb --help" ]
+  - name: default
+    arguments: [ "/usr/src/CeWL/cewl.rb --help" ]
