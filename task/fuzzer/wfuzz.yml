@@ -1,0 +1,15 @@
+kind: task/v1
+name: wfuzz
+tags:
+  - fuzzer
+  - obsolete
+image:
+  repository: ghcr.io/xmendez/wfuzz
+  version: latest
+commands:
+  - name: help
+    arguments: [ "wfuzz --help" ]
+  - name: version
+    arguments: [ "wfuzz --version" ]
+  - name: default
+    arguments: [ "wfuzz --help" ]
