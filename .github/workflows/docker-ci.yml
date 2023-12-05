@@ -44,9 +44,6 @@ jobs:
             name: metasploit
             nightly: true
           - path: .
-            name: parrot-core
-            nightly: true
-          - path: .
             name: ubuntu-tty
             nightly: true
           # exclude from nightly schedule
@@ -66,6 +63,34 @@ jobs:
           DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
           DOCKER_DEFAULT_TAG: 'latest'
           # repository secrets
+          SECRET_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          SECRET_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+          SECRET_DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  
+  # issues with python3
+  docker-parrot:
+    name: Docker parrot
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        images:
+          - path: .
+            name: parrot-core
+            nightly: true
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Docker CI
+        if: ${{ github.event_name != 'schedule' || (github.event_name == 'schedule' && matrix.images.nightly) }}
+        uses: hckops/actions/docker-template-action@v0.10.10
+        with:
+          DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
+          DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
+          DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
+          DOCKER_DEFAULT_TAG: 'latest'
           SECRET_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           SECRET_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           SECRET_DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
