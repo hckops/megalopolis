@@ -1,4 +1,3 @@
-# NOT working https://github.com/pwnpad/pwnpad/issues/12
 kind: box/v1
 name: PwnPad
 tags:
@@ -6,4 +5,4 @@ tags:
   - ctf
 image:
   repository: platypew/pwnpad
-  version: latest
+  version: bare
