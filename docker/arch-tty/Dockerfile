@@ -20,6 +20,7 @@ USER arch
 WORKDIR /home/arch
 
 RUN sudo pacman -S --noconfirm \
+  debugedit \
   git \
   binutils \
   make \

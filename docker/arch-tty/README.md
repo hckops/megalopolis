@@ -11,7 +11,7 @@
 # tmp container
 docker run --rm --name archlinux -it archlinux
 
-# build
+# build: use "--progress=plain --no-cache" to debug console output
 docker build -t hckops/arch-tty docker/arch-tty
 
 # run
