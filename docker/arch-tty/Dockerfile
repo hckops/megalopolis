@@ -33,4 +33,4 @@ RUN sudo pacman -S --noconfirm \
   cd && rm -frv /tmp/tini
 
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD ttyd --port "${TTYD_PORT}" --credential "${TTYD_USERNAME}:${TTYD_PASSWORD}" ${TTYD_EXEC}
+CMD ttyd --writable --port "${TTYD_PORT}" --credential "${TTYD_USERNAME}:${TTYD_PASSWORD}" ${TTYD_EXEC}
