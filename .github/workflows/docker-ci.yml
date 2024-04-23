@@ -68,6 +68,8 @@ jobs:
           SECRET_DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
 
   docker-unstable:
+    # disabled
+    if: false
     name: Docker unstable
     runs-on: ubuntu-latest
     timeout-minutes: 15
