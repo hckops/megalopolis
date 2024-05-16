@@ -10,7 +10,7 @@ ENV TTYD_EXEC=/bin/bash
 
 RUN apt-get update && apt-get -y install \
   curl \
-  netcat \
+  netcat-traditional \
   socat \
   tini && \
   apt-get clean
