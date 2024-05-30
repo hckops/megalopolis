@@ -59,6 +59,7 @@ jobs:
         uses: hckops/actions/docker-template-action@v0.10.14
         with:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
+          DOCKER_PLATFORMS: 'linux/amd64'
           DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
           DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
           DOCKER_DEFAULT_TAG: 'latest'
