@@ -49,13 +49,18 @@ jobs:
           # exclude from nightly schedule
           - path: ctf
             name: htb-postman
+          # unstable: issues with python3
+          - path: .
+            name: parrot-core
+            nightly: true
+            skip: true
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       
       - name: Docker CI
-        if: ${{ github.event_name != 'schedule' || (github.event_name == 'schedule' && matrix.images.nightly) }}
+        if: ${{ !matrix.images.skip && (github.event_name != 'schedule' || (github.event_name == 'schedule' && matrix.images.nightly)) }}
         uses: hckops/actions/docker-template-action@v0.10.14
         with:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
@@ -64,37 +69,6 @@ jobs:
           DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
           DOCKER_DEFAULT_TAG: 'latest'
           # repository secrets
-          SECRET_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
-          SECRET_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-          SECRET_DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-
-  docker-unstable:
-    # disabled
-    if: false
-    name: Docker unstable
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    strategy:
-      matrix:
-        images:
-          # issues with python3
-          - path: .
-            name: parrot-core
-            nightly: true
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Docker CI
-        if: ${{ github.event_name != 'schedule' || (github.event_name == 'schedule' && matrix.images.nightly) }}
-        uses: hckops/actions/docker-template-action@v0.10.14
-        with:
-          DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
-          DOCKER_PLATFORMS: 'linux/amd64'
-          DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
-          DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
-          DOCKER_DEFAULT_TAG: 'latest'
           SECRET_DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           SECRET_DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           SECRET_DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
