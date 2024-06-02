@@ -1,4 +1,4 @@
-FROM parrotsec/core:5.3
+FROM parrotsec/core
 
 # https://github.com/tsl0922/ttyd/releases
 ARG TTYD_VERSION=1.7.7
