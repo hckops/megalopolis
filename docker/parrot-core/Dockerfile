@@ -1,4 +1,4 @@
-FROM parrotsec/core
+FROM parrotsec/core:5.3
 
 # https://github.com/tsl0922/ttyd/releases
 ARG TTYD_VERSION=1.7.7
@@ -16,7 +16,7 @@ ENV PASSWORD="changeme"
 
 ENV OPENVPN_CONFIG="/usr/share/openvpn/client.ovpn"
 
-RUN apt-get update && \
+RUN apt-get update && apt-get -y upgrade && \
   DEBIAN_FRONTEND=noninteractive apt-get -y install \
     dbus-x11 \
     xfce4 \
