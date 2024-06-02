@@ -1,5 +1,8 @@
 FROM parrotsec/core
 
+# https://github.com/tsl0922/ttyd/releases
+ARG TTYD_VERSION=1.7.7
+
 ENV DISPLAY :0
 # 1024x768x24
 ENV RESOLUTION 1920x1080x24
@@ -19,9 +22,12 @@ RUN apt-get update && \
     xfce4 \
     xvfb \
     x11vnc \
-    ttyd \
     openvpn && \
     apt-get clean
+
+RUN curl -sSL "https://github.com/tsl0922/ttyd/releases/download/${TTYD_VERSION}/ttyd.$(uname -m)" -o /usr/local/bin/ttyd && \
+  chmod u+x /usr/local/bin/ttyd && \
+  ttyd -v  
 
 # installs noVNC
 RUN apt-get -y install git && \
@@ -31,7 +37,7 @@ RUN apt-get -y install git && \
 
 SHELL ["/bin/bash", "-c"]
 
-# setup supervisor
+# setups supervisor
 COPY supervisor /tmp
 RUN apt-get update && apt-get -y install supervisor && \
   echo_supervisord_conf > /etc/supervisord.conf && \
