@@ -28,35 +28,35 @@ jobs:
     strategy:
       matrix:
         images:
-          - path: .
-            name: alpine-openvpn
-            nightly: true
-          - path: .
-            name: alpine-openvpn-privileged
-            nightly: true
-          - path: .
-            name: alpine-tty
-            nightly: true
-          - path: .
-            name: arch-tty
-            # arm base image not available
-            platforms: 'linux/amd64'
-            nightly: true
-          - path: .
-            name: metasploit
-            nightly: true
-          - path: .
-            name: ubuntu-tty
-            nightly: true
-          # exclude from nightly schedule
-          - path: ctf
-            name: htb-postman
+          # - path: .
+          #   name: alpine-openvpn
+          #   nightly: true
+          # - path: .
+          #   name: alpine-openvpn-privileged
+          #   nightly: true
+          # - path: .
+          #   name: alpine-tty
+          #   nightly: true
+          # - path: .
+          #   name: arch-tty
+          #   # arm base image not available
+          #   platforms: 'linux/amd64'
+          #   nightly: true
+          # - path: .
+          #   name: metasploit
+          #   nightly: true
+          # - path: .
+          #   name: ubuntu-tty
+          #   nightly: true
+          # # exclude from nightly schedule
+          # - path: ctf
+          #   name: htb-postman
           # unstable: issues with python3
           - path: .
             name: parrot-core
             platforms: 'linux/amd64'
             nightly: true
-            skip: true
+            skip: false
 
     steps:
       - name: Checkout repository
