@@ -25,9 +25,12 @@ RUN apt-get update && apt-get -y upgrade && \
     openvpn && \
     apt-get clean
 
+# fixes missing xfce menu and title bar on parrot 6
+RUN cp /etc/xdg/xfce4/panel/default.xml ~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+
 RUN curl -sSL "https://github.com/tsl0922/ttyd/releases/download/${TTYD_VERSION}/ttyd.$(uname -m)" -o /usr/local/bin/ttyd && \
   chmod u+x /usr/local/bin/ttyd && \
-  ttyd -v  
+  ttyd -v
 
 # installs noVNC
 RUN apt-get -y install git && \
