@@ -39,6 +39,8 @@ jobs:
             nightly: true
           - path: .
             name: arch-tty
+            # arm base image not available
+            platforms: 'linux/amd64'
             nightly: true
           - path: .
             name: metasploit
