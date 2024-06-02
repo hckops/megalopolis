@@ -1,7 +1,7 @@
 FROM alpine
 
 # https://github.com/tsl0922/ttyd/releases
-ARG TTYD_VERSION=1.7.3
+ARG TTYD_VERSION=1.7.7
 
 ENV TTYD_PORT=7681
 ENV TTYD_USERNAME=alpine
@@ -15,7 +15,7 @@ RUN apk upgrade --update && apk add --no-cache \
   socat \
   tini
 
-RUN curl -sSL "https://github.com/tsl0922/ttyd/releases/download/${TTYD_VERSION}/ttyd.x86_64" -o /usr/local/bin/ttyd && \
+RUN curl -sSL "https://github.com/tsl0922/ttyd/releases/download/${TTYD_VERSION}/ttyd.$(uname -p)" -o /usr/local/bin/ttyd && \
   chmod u+x /usr/local/bin/ttyd && \
   ttyd -v
 

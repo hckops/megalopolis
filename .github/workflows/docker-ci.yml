@@ -30,32 +30,25 @@ jobs:
         images:
           - path: .
             name: alpine-openvpn
-            platforms: 'linux/amd64,linux/arm64'
             nightly: true
           - path: .
             name: alpine-openvpn-privileged
-            platforms: 'linux/amd64,linux/arm64'
             nightly: true
           - path: .
             name: alpine-tty
-            platforms: 'linux/amd64'
             nightly: true
           - path: .
             name: arch-tty
-            platforms: 'linux/amd64'
             nightly: true
           - path: .
             name: metasploit
-            platforms: 'linux/amd64,linux/arm64'
             nightly: true
           - path: .
             name: ubuntu-tty
-            platforms: 'linux/amd64'
             nightly: true
           # exclude from nightly schedule
           - path: ctf
             name: htb-postman
-            platforms: 'linux/amd64,linux/arm64'
           # unstable: issues with python3
           - path: .
             name: parrot-core
@@ -72,7 +65,8 @@ jobs:
         uses: hckops/actions/docker-template-action@v0.10.14
         with:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
-          DOCKER_PLATFORMS: ${{ matrix.images.platforms }}
+          # use override or fallback to default
+          DOCKER_PLATFORMS: ${{ matrix.images.platforms || 'linux/amd64,linux/arm64' }}
           DOCKER_IMAGE_NAME: ${{ matrix.images.name }}
           DOCKER_REPOSITORY: ${{ env.DOCKER_REPOSITORY }}
           DOCKER_DEFAULT_TAG: 'latest'
