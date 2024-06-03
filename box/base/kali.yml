@@ -4,10 +4,13 @@ tags:
   - base
   - official
 image:
+  # private image
   repository: hckops/kali-core
 env:
-  - VNC_PASSWORD=kali
+  - USERNAME=root
+  - PASSWORD=kali
 network:
   ports:
     - vnc:5900
     - novnc:6080
+    - tty:7681

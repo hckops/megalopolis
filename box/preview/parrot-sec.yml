@@ -4,7 +4,7 @@ tags:
   - preview
   - official
 image:
-  # WIP private image
+  # private image
   repository: hckops/parrot-sec
   version: latest
 env:

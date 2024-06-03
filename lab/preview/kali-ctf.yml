@@ -1,12 +1,12 @@
 kind: lab/v1
-name: ctf-linux
+name: kali-ctf
 tags:
   - preview
   - base
   - official
 box:
   template:
-    name: box/preview/parrot-sec
+    name: box/base/kali
     env:
     - PASSWORD=${password:random}
   size: M
@@ -17,4 +17,3 @@ box:
   - tty
   dumps:
   - seclists
-  - linpeas

@@ -1,0 +1,20 @@
+kind: lab/v1
+name: parrot-ctf
+tags:
+  - preview
+  - base
+  - official
+box:
+  template:
+    name: box/preview/parrot-sec
+    env:
+    - PASSWORD=${password:random}
+  size: M
+  vpn: ${vpn:default}
+  ports:
+  - vnc
+  - novnc
+  - tty
+  dumps:
+  - seclists
+  - linpeas
