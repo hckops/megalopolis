@@ -40,5 +40,5 @@ RUN apk add --no-cache supervisor && \
 CMD ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
 
 # update configs
-COPY .bashrc .vimrc /root/
+COPY ./files/.bashrc ./files/.vimrc /root/
 RUN sed -i 's/\/bin\/sh/\/bin\/bash/;s/\/bin\/ash/\/bin\/bash/' /etc/passwd
