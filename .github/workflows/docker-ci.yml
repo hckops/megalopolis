@@ -29,6 +29,9 @@ jobs:
       matrix:
         images:
           - path: .
+            name: alpine-core
+            nightly: true
+          - path: .
             name: alpine-openvpn
             nightly: true
           - path: .
