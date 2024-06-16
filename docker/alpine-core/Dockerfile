@@ -22,7 +22,8 @@ RUN apk add --no-cache \
   bash \
   xfce4-terminal \
   vim \
-  curl
+  curl \
+  exa
 
 # use bash for command expansion
 SHELL ["/bin/bash", "-c"]
@@ -37,3 +38,7 @@ RUN apk add --no-cache supervisor && \
   rm -fr /tmp/supervisor*
 
 CMD ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
+
+# update configs
+COPY .bashrc .vimrc /root/
+RUN sed -i 's/root:\/bin\/ash/root:\/bin\/bash/' /etc/passwd
