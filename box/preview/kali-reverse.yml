@@ -1,0 +1,16 @@
+kind: box/v1
+name: kali-reverse
+tags:
+  - preview
+  - official
+image:
+  # private image
+  repository: hckops/kali-reverse
+env:
+  - USERNAME=root
+  - PASSWORD=kali
+network:
+  ports:
+    - vnc:5900
+    - novnc:6080
+    - tty:7681
