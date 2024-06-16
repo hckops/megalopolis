@@ -1,0 +1,13 @@
+kind: box/v1
+name: alpine-core
+tags:
+  - preview
+  - official
+image:
+  repository: hckops/alpine-core
+  version: latest
+shell: /bin/bash
+network:
+  ports:
+    - vnc:5900
+    - novnc:6080

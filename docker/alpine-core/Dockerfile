@@ -41,4 +41,4 @@ CMD ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
 
 # update configs
 COPY .bashrc .vimrc /root/
-RUN sed -i 's/root:\/bin\/ash/root:\/bin\/bash/' /etc/passwd
+RUN sed -i 's/\/bin\/sh/\/bin\/bash/;s/\/bin\/ash/\/bin\/bash/' /etc/passwd
