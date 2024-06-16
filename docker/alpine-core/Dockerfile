@@ -4,9 +4,6 @@ ENV DISPLAY :1
 # alternative 1024x768x16
 ENV RESOLUTION 1920x1080x24
 
-ENV VNC_PORT 5900
-ENV NOVNC_PORT 6080
-
 # setup desktop environment (xfce4), display server (xvfb), vnc server (x11vnc)
 RUN apk add --no-cache \
   xfce4 \
