@@ -23,7 +23,7 @@ RUN apk add --no-cache \
   xfce4-terminal \
   vim \
   curl \
-  exa
+  eza
 
 # use bash for command expansion
 SHELL ["/bin/bash", "-c"]
