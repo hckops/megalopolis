@@ -28,6 +28,8 @@ jobs:
     strategy:
       matrix:
         images:
+
+          ########## boxes ##########
           - path: .
             name: alpine-core
             nightly: true
@@ -57,6 +59,11 @@ jobs:
           # exclude from nightly schedule
           - path: ctf
             name: htb-postman
+
+          ########## tasks ##########
+          - path: task
+            name: rsactftool
+            nightly: true
 
     steps:
       - name: Checkout repository
