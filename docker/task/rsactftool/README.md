@@ -7,12 +7,12 @@
 [image-size]: https://img.shields.io/docker/image-size/hckops/rsactftool?color=orange&sort=date&style=for-the-badge
 [repo-url]: https://hub.docker.com/r/hckops/rsactftool
 
-Source https://github.com/RsaCtfTool/RsaCtfTool
+* [Source](https://github.com/RsaCtfTool/RsaCtfTool)
 
 ```bash
 # build
 docker build -t hckops/rsactftool docker/task/rsactftool
 
 # run
-docker run --rm --name rsactftool -h
+docker run --rm hckops/rsactftool -h
 ```

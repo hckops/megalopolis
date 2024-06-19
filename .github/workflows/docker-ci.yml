@@ -30,33 +30,33 @@ jobs:
         images:
 
           ########## boxes ##########
-          - path: .
+          - path: box
             name: alpine-core
             nightly: true
-          - path: .
+          - path: box
             name: alpine-openvpn
             nightly: true
-          - path: .
+          - path: box
             name: alpine-openvpn-privileged
             nightly: true
-          - path: .
+          - path: box
             name: alpine-tty
             nightly: true
-          - path: .
+          - path: box
             name: arch-tty
             # arm base image not available
             platforms: 'linux/amd64'
             nightly: true
-          - path: .
+          - path: box
             name: metasploit
             nightly: true
-          - path: .
+          - path: box
             name: parrot-core
             nightly: true
-          - path: .
+          - path: box
             name: ubuntu-tty
             nightly: true
-          # exclude from nightly schedule
+            # exclude from nightly schedule
           - path: ctf
             name: htb-postman
 
