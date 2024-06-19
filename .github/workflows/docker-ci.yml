@@ -61,9 +61,9 @@ jobs:
             name: htb-postman
 
           ########## tasks ##########
-          - path: task
-            name: rsactftool
-            nightly: true
+          # - path: task
+          #   name: rsactftool
+          #   nightly: true
 
     steps:
       - name: Checkout repository
