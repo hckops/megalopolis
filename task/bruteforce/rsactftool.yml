@@ -1,0 +1,15 @@
+kind: task/v1
+name: rsactftool
+tags:
+  - bruteforce
+  - rsa
+image:
+  repository: hckops/rsactftool
+  version: latest
+commands:
+  - name: help
+    arguments: [ "/opt/rsactftool/RsaCtfTool.py --help" ]
+  - name: default
+    arguments:
+      - "/opt/rsactftool/RsaCtfTool.py"
+      - "--help"
