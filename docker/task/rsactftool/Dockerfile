@@ -1,16 +1,13 @@
-# use 3.11 until the issue is resolved https://github.com/aleaxit/gmpy/issues/446
-FROM python:3.11-alpine
+# use 3.11 until this issue is resolved https://github.com/aleaxit/gmpy/issues/446
+FROM python:3.11-slim
 
-RUN apk add --no-cache \
+# see https://github.com/RsaCtfTool/RsaCtfTool/blob/master/.github/workflows/test.yml
+RUN apt-get update && apt-get -y install \
   git \
-  gcc \
-  g++ \
-  make \
-  musl-dev \
-  linux-headers \
-  gmp-dev \
-  mpfr-dev \
-  mpc1-dev
+  libgmp3-dev \
+  libmpc-dev \
+  sagemath && \
+  apt-get clean
 
 RUN git clone https://github.com/RsaCtfTool/RsaCtfTool.git /opt/rsactftool && \
   pip install -r "/opt/rsactftool/requirements.txt"
