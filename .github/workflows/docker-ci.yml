@@ -63,6 +63,7 @@ jobs:
           ########## tasks ##########
           - path: task
             name: rsactftool
+            platforms: 'linux/amd64'
             nightly: true
 
     steps:
