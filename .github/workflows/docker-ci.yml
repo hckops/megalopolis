@@ -72,7 +72,7 @@ jobs:
       
       - name: Docker CI
         if: ${{ !matrix.images.skip && (github.event_name != 'schedule' || (github.event_name == 'schedule' && matrix.images.nightly)) }}
-        uses: hckops/actions/docker-template-action@v0.11.0
+        uses: hckops/actions/docker-template-action@v0.11.2
         with:
           DOCKER_CONTEXT: ./docker/${{ matrix.images.path }}/${{ matrix.images.name }}
           # use override or fallback to default
